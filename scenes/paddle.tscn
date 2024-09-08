@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1kacfpqpuhro"]
+
+[ext_resource type="Texture2D" uid="uid://0dsqj1id4jlf" path="res://assets/left_pallete.png" id="1_5t68d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rsddx"]
+radius = 4.0
+
+[node name="Paddle" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_rsddx")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+texture = ExtResource("1_5t68d")

@@ -1,19 +1,43 @@
-[gd_scene load_steps=5 format=3 uid="uid://c78ol8nl06e2h"]
+[gd_scene load_steps=10 format=3 uid="uid://c78ol8nl06e2h"]
 
+[ext_resource type="Script" path="res://scripts/player_right.gd" id="1_p2ynp"]
 [ext_resource type="Texture2D" uid="uid://0dsqj1id4jlf" path="res://assets/left_pallete.png" id="1_qjpwd"]
 [ext_resource type="Texture2D" uid="uid://cljbru5na1kns" path="res://assets/right_pallete.png" id="2_jhxa3"]
 [ext_resource type="Texture2D" uid="uid://drj18snvl85k1" path="res://assets/separator.png" id="3_0out7"]
+[ext_resource type="Script" path="res://scripts/player_left.gd" id="3_a7q4u"]
 [ext_resource type="Texture2D" uid="uid://gcg2n4x4bkm1" path="res://assets/ball.png" id="4_bycyn"]
 
-[node name="Game" type="Node2D"]
+[sub_resource type="GDScript" id="GDScript_1mu1e"]
 
-[node name="left" type="Sprite2D" parent="."]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydsyr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11o1m"]
+radius = 4.0
+height = 32.0
+
+[node name="Game" type="Node2D"]
+script = SubResource("GDScript_1mu1e")
+
+[node name="player_right" type="CharacterBody2D" parent="."]
+script = ExtResource("1_p2ynp")
+
+[node name="player_right_sprite" type="Sprite2D" parent="player_right"]
+texture = ExtResource("2_jhxa3")
+offset = Vector2(577, 183)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_right"]
+shape = SubResource("CapsuleShape2D_ydsyr")
+
+[node name="player_left" type="CharacterBody2D" parent="."]
+script = ExtResource("3_a7q4u")
+
+[node name="player_left_sprite" type="Sprite2D" parent="player_left"]
 texture = ExtResource("1_qjpwd")
 offset = Vector2(67, 183)
 
-[node name="right" type="Sprite2D" parent="."]
-texture = ExtResource("2_jhxa3")
-offset = Vector2(577, 183)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_left"]
+position = Vector2(67, 183)
+shape = SubResource("CapsuleShape2D_11o1m")
 
 [node name="separator" type="Sprite2D" parent="."]
 texture = ExtResource("3_0out7")
