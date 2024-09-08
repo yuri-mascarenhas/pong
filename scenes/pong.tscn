@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c78ol8nl06e2h"]
+
+[ext_resource type="Texture2D" uid="uid://0dsqj1id4jlf" path="res://assets/left_pallete.png" id="1_qjpwd"]
+[ext_resource type="Texture2D" uid="uid://cljbru5na1kns" path="res://assets/right_pallete.png" id="2_jhxa3"]
+[ext_resource type="Texture2D" uid="uid://drj18snvl85k1" path="res://assets/separator.png" id="3_0out7"]
+[ext_resource type="Texture2D" uid="uid://gcg2n4x4bkm1" path="res://assets/ball.png" id="4_bycyn"]
+
+[node name="Game" type="Node2D"]
+
+[node name="left" type="Sprite2D" parent="."]
+texture = ExtResource("1_qjpwd")
+offset = Vector2(67, 183)
+
+[node name="right" type="Sprite2D" parent="."]
+texture = ExtResource("2_jhxa3")
+offset = Vector2(577, 183)
+
+[node name="separator" type="Sprite2D" parent="."]
+texture = ExtResource("3_0out7")
+offset = Vector2(320, 200)
+
+[node name="ball" type="Sprite2D" parent="."]
+texture = ExtResource("4_bycyn")
+offset = Vector2(320, 188)
