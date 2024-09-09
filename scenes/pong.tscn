@@ -10,6 +10,8 @@
 [sub_resource type="GDScript" id="GDScript_1mu1e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydsyr"]
+radius = 4.0
+height = 32.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_11o1m"]
 radius = 4.0
@@ -19,24 +21,23 @@ height = 32.0
 script = SubResource("GDScript_1mu1e")
 
 [node name="player_right" type="CharacterBody2D" parent="."]
+position = Vector2(577, 183)
 script = ExtResource("1_p2ynp")
 
 [node name="player_right_sprite" type="Sprite2D" parent="player_right"]
 texture = ExtResource("2_jhxa3")
-offset = Vector2(577, 183)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_right"]
 shape = SubResource("CapsuleShape2D_ydsyr")
 
 [node name="player_left" type="CharacterBody2D" parent="."]
+position = Vector2(67, 183)
 script = ExtResource("3_a7q4u")
 
 [node name="player_left_sprite" type="Sprite2D" parent="player_left"]
 texture = ExtResource("1_qjpwd")
-offset = Vector2(67, 183)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_left"]
-position = Vector2(67, 183)
 shape = SubResource("CapsuleShape2D_11o1m")
 
 [node name="separator" type="Sprite2D" parent="."]
