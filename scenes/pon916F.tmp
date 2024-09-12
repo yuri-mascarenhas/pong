@@ -34,7 +34,7 @@ texture = ExtResource("2_jhxa3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_right"]
 shape = SubResource("CapsuleShape2D_ydsyr")
 
-[node name="player_left" type="RigidBody2D" parent="."]
+[node name="player_left" type="CharacterBody2D" parent="."]
 position = Vector2(67, 183)
 script = ExtResource("3_a7q4u")
 

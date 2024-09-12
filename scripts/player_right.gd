@@ -1,36 +1,27 @@
-extends CharacterBody2D
+extends RigidBody2D
 
-
-@export var speed = 300.0
 const JUMP_VELOCITY = -400.0
 
-var min_y = 0
-var max_y = 0
+@export var speed = 300.0
+
+var width = 0
+var height = 0
+var sprite_height = 0
 
 # Reference to node
 @onready var sprite = $player_right_sprite
 
 func _ready():
+	width = self.get_viewport().get_visible_rect().size.x
+	height = self.get_viewport().get_visible_rect().size.y
 	# Check if sprite node is valid
 	if sprite and sprite.texture:
-		var sprite_height = sprite.texture.get_size().y
-		min_y = sprite_height / 2
-		max_y = get_viewport().size.y - sprite_height / 2
+		sprite_height = sprite.texture.get_size().y
 
 func _physics_process(delta: float) -> void:
-	var input_vector = Vector2.ZERO
+	if self.global_position.y > height + sprite_height:
+		self.set_linear_velocity(Vector2(0,0))
+		self.global_position = Vector2(577, height / 2)
+	if Input.is_action_just_pressed("right_move_up"):
+		self.set_linear_velocity(Vector2(0, -200))
 	
-	# Get movement input
-	if Input.is_action_pressed("right_move_down"):
-		input_vector.y += 1
-	if Input.is_action_pressed("right_move_up"):
-		input_vector.y -= 1
-	
-	# Normalize vector
-	input_vector = input_vector.normalized()
-	
-	# Move and limit paddle
-	var new_position = position + input_vector * speed * delta
-	new_position.y = clamp(new_position.y, min_y, max_y)
-	position = new_position
-	move_and_slide()
