@@ -1,4 +1,4 @@
-extends RigidBody2D
+class_name PlayerRight extends RigidBody2D
 
 const JUMP_VELOCITY = -400.0
 

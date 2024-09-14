@@ -1,4 +1,4 @@
-extends Area2D
+class_name Ball extends Area2D
 
 @export var speed = 300
 @export var velocity = Vector2(1, 0).normalized() * speed
@@ -15,4 +15,5 @@ func _process(delta: float) -> void:
 	
 	
 func _on_body_entered(body: Node2D) -> void:
-	print(body)
+	if body is PlayerLeft or body is PlayerRight:
+		velocity = Vector2(-self.velocity.x, 0).normalized() * speed
