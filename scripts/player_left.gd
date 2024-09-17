@@ -18,7 +18,7 @@ func _ready():
 	if sprite and sprite.texture:
 		sprite_height = sprite.texture.get_size().y
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if self.global_position.y > height + sprite_height:
 		self.set_linear_velocity(Vector2(0,0))
 		self.global_position = Vector2(67, height / 2)
