@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://vyvbo7qucl48"]
+[gd_scene load_steps=13 format=3 uid="uid://vyvbo7qucl48"]
 
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_cm3w6"]
 [ext_resource type="Script" path="res://scripts/player_right.gd" id="1_p2ynp"]
 [ext_resource type="Texture2D" uid="uid://0dsqj1id4jlf" path="res://assets/left_pallete.png" id="1_qjpwd"]
 [ext_resource type="Texture2D" uid="uid://cljbru5na1kns" path="res://assets/right_pallete.png" id="2_jhxa3"]
@@ -23,6 +24,28 @@ radius = 4.0
 
 [node name="Game" type="Node2D"]
 script = SubResource("GDScript_1mu1e")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameManager" type="Control" parent="UI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_cm3w6")
+
+[node name="LeftScoreLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RightScoreLabel" type="Label" parent="UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="player_right" type="RigidBody2D" parent="."]
 position = Vector2(577, 183)
