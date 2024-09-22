@@ -43,5 +43,5 @@ func reset_ball() -> void:
 	self.position = window_size / 2
 	# Reset velocity
 	var direction_x = randf_range(-1.0, 1.0)
-	self.velocity = Vector2(direction_x, randf_range(-0.5, 0.5)).normalized() * speed	
+	self.velocity = Vector2(direction_x, 0).normalized() * speed	
 	
