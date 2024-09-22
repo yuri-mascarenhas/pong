@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://vyvbo7qucl48"]
+[gd_scene load_steps=12 format=3 uid="uid://vyvbo7qucl48"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_cm3w6"]
 [ext_resource type="Script" path="res://scripts/player_right.gd" id="1_p2ynp"]
@@ -8,8 +8,6 @@
 [ext_resource type="Script" path="res://scripts/player_left.gd" id="3_a7q4u"]
 [ext_resource type="Texture2D" uid="uid://gcg2n4x4bkm1" path="res://assets/ball.png" id="4_bycyn"]
 [ext_resource type="Script" path="res://scripts/ball.gd" id="6_5jgc0"]
-
-[sub_resource type="GDScript" id="GDScript_1mu1e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ydsyr"]
 radius = 4.0
@@ -23,7 +21,6 @@ height = 32.0
 radius = 4.0
 
 [node name="Game" type="Node2D"]
-script = SubResource("GDScript_1mu1e")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -37,12 +34,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_cm3w6")
 
-[node name="LeftScoreLabel" type="Label" parent="UI"]
+[node name="LeftScoreLabel" type="Label" parent="UI/GameManager"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
 
-[node name="RightScoreLabel" type="Label" parent="UI"]
+[node name="RightScoreLabel" type="Label" parent="UI/GameManager"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
@@ -69,18 +66,18 @@ texture = ExtResource("1_qjpwd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player_left"]
 shape = SubResource("CapsuleShape2D_11o1m")
 
-[node name="separator" type="Sprite2D" parent="."]
+[node name="Separator" type="Sprite2D" parent="."]
 texture = ExtResource("3_0out7")
 offset = Vector2(320, 200)
 
-[node name="ball" type="Area2D" parent="."]
+[node name="Ball" type="Area2D" parent="."]
 position = Vector2(320, 188)
 script = ExtResource("6_5jgc0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ball"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("CircleShape2D_o1h81")
 
-[node name="ball_sprite" type="Sprite2D" parent="ball"]
+[node name="ball_sprite" type="Sprite2D" parent="Ball"]
 texture = ExtResource("4_bycyn")
 
-[connection signal="body_entered" from="ball" to="ball" method="_on_body_entered"]
+[connection signal="body_entered" from="Ball" to="Ball" method="_on_body_entered"]
