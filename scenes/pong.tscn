@@ -26,6 +26,7 @@ script = SubResource("GDScript_1mu1e")
 
 [node name="player_right" type="RigidBody2D" parent="."]
 position = Vector2(577, 183)
+gravity_scale = 0.5
 script = ExtResource("1_p2ynp")
 
 [node name="player_right_sprite" type="Sprite2D" parent="player_right"]
@@ -36,6 +37,7 @@ shape = SubResource("CapsuleShape2D_ydsyr")
 
 [node name="player_left" type="RigidBody2D" parent="."]
 position = Vector2(67, 183)
+gravity_scale = 0.5
 script = ExtResource("3_a7q4u")
 
 [node name="player_left_sprite" type="Sprite2D" parent="player_left"]
