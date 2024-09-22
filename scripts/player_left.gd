@@ -9,7 +9,7 @@ var height = 0
 var sprite_height = 0
 
 # Reference to node
-@onready var sprite = $player_right_sprite
+@onready var sprite = $player_left_sprite
 
 func _ready():
 	width = self.get_viewport().get_visible_rect().size.x
