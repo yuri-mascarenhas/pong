@@ -33,6 +33,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_cm3w6")
+font_size = 40
 
 [node name="LeftScoreLabel" type="Label" parent="UI/GameManager"]
 layout_mode = 0
